@@ -7,14 +7,16 @@ import EmployeeEdit from './components/EmployeeEdit';
 
 const RouterComponent = () => {
   return (
-    <Router sceneStyle={{ paddingTop: 65 }}>
-      <Scene key="auth">
+    <Router sceneStyle={{ paddingTop: 65, backgroundColor: '#F7F7F7' }}>
+      <Scene navigationBarStyle={{backgroundColor: '#229eff'}} key="auth">
         <Scene key="login" component={LoginForm} title="Please Login" />
       </Scene>
 
-      <Scene key="main">
+      <Scene key="main" barButtonTextStyle={{ color: '#f7fbff' }}>
         <Scene
+          navigationBarStyle={{backgroundColor: '#229cff'}}
           onRight={() => Actions.employeeCreate()}
+          barButtonTextStyle={{ color: '#f7fbff' }}
           rightTitle="Add"
           key="employeeList"
           component={EmployeeList}

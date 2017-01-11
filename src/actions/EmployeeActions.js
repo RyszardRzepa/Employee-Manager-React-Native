@@ -34,6 +34,7 @@ export const employeesFetch = () => {
     firebase.database().ref(`/users/${currentUser.uid}/employees`)
       .on('value', snapshot => {
         dispatch({ type: EMPLOYEES_FETCH_SUCCESS, payload: snapshot.val() });
+
       });
   };
 };
